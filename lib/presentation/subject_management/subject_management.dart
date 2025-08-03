@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../core/app_export.dart';
-import '../../widgets/custom_icon_widget.dart';
 import './widgets/add_subject_bottom_sheet.dart';
 import './widgets/empty_state_widget.dart';
 import './widgets/search_bar_widget.dart';
@@ -269,7 +268,11 @@ class _SubjectManagementState extends State<SubjectManagement>
               title: const Text('Edit Subject'),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.pushNamed(context, '/add-edit-subject');
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.addEditSubject,
+                  arguments: subject['id'],
+                );
               },
             ),
             ListTile(
@@ -597,7 +600,10 @@ class _SubjectManagementState extends State<SubjectManagement>
                                           _selectSubject(subjectId);
                                         } else {
                                           Navigator.pushNamed(
-                                              context, '/add-edit-subject');
+                                            context,
+                                            AppRoutes.addEditSubject,
+                                            arguments: subjectId,
+                                          );
                                         }
                                       },
                                       onLongPress: () {

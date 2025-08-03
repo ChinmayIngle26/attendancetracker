@@ -17,7 +17,7 @@ class AppRoutes {
   static const String dashboardHome = '/dashboard-home';
 
   static Map<String, WidgetBuilder> routes = {
-    initial: (context) => const AddEditSubject(),
+    initial: (context) => const DashboardHome(),
     addEditSubject: (context) => const AddEditSubject(),
     attendanceStatistics: (context) => const AttendanceStatistics(),
     subjectManagement: (context) => const SubjectManagement(),
